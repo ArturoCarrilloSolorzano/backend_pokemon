@@ -19,22 +19,12 @@ app.get("/pokemons", async (req, res) => {
       "https://pokeapi.co/api/v2/pokemon/?limit=20"
     );
     const results = response.data.results;
-
-    const newResultsImage = results.forEach((result) => {
-      const split = result.url.split("/");
-      console.log(split[6]);
-      result.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${split[6]}.png`;
-      return result;
-    });
-
-    for (let i = 0; i < results.lenfth; i++) {
+    for (let i = 0; i < results.length; i++) {
       const split = results[i].url.split("/");
-      console.log(split[6]);
       results[
         i
       ].image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${split[6]}.png`;
     }
-    console.log({ results });
     res.send(results);
 
     //res.json(response);
