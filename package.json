@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./api/index.js",
-    "vercel-build": "echo hello",
-    "build": "webpack",
+    "start": "node ./api/index.js",
     "prod": "node dist/final.js"
   },
   "author": "",
